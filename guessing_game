@@ -1,0 +1,29 @@
+#this is a guess the number game.
+
+import random#going to need a random number
+
+print("Hello. What is your name?")
+name = input()#input() allows user to enter name: stored in variable(name) so we can use it later.
+
+print("Well, " + name + ", I am thinking of a number between 1 and 20")
+secretNumber = random.randint(1,20)
+#random.randint(1,20) = a random integer between 1&20 including 1&20
+#the random number is stored in secretNumber variable
+
+for guessesTaken in range(1,7):#wanted to loop a specific number of times use for loop
+    print("Take a guess.")  
+    guess = int(input())#user will be typing in an integer, but input() returns string
+                        #use int() to evaluate to an integer version of input()
+    if guess < secretNumber:
+        print("your guess is too low.")#if guess is too low
+    elif guess > secretNumber:
+        print("your guess is too high.")#if guess is too high
+    else: #only other option is to guess the exact random integer
+        break #if the secretNumber is correctly guessed the code breaks out of the loop.
+    
+    
+if guess == secretNumber:
+    print("Good job, " + name + " you guessed my number in " + str(guessesTaken) + " guesses.")
+else:
+    print("Nope, the number I was thinking of was " + str(secretNumber))
+    
